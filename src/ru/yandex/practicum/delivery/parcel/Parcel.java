@@ -31,7 +31,7 @@ public abstract class Parcel {
         System.out.println("Посылка <<" + description + ">> доставлена по адресу " + deliveryAddress);
     }
 
-    public double calculateDeliveryCost() {
+    public int calculateDeliveryCost() {
         return weight * getBaseCost();
     }
     // В каждом типе указываем базовую стоимость

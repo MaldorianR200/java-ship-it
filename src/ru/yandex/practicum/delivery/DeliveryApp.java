@@ -95,8 +95,8 @@ public class DeliveryApp {
             }
             case 3 -> {
                 System.out.println("Введите срок хранения: ");
-                int timeTiLive = Integer.parseInt(scanner.nextLine());
-                PerishableParcel pp = new PerishableParcel(description, weight, deliveryAddress, sendDay, timeTiLive);
+                int timeToLive = Integer.parseInt(scanner.nextLine());
+                PerishableParcel pp = new PerishableParcel(description, weight, deliveryAddress, sendDay, timeToLive);
                 allParcels.add(pp);
                 perishableBox.addParcel(pp);
                 System.out.println("Скоропортящаяся посылка добавлена!");
@@ -134,6 +134,8 @@ public class DeliveryApp {
         int type = Integer.parseInt(scanner.nextLine());
         switch (type) {
             case 1 -> printBoxContents("Стандартная коробка", standardBox.getAllParcels());
+            case 2 -> printBoxContents("Хрупкая коробка", fragileBox.getAllParcels());
+            case 3 -> printBoxContents("Скоропортящаяся коробка", perishableBox.getAllParcels());
         }
     }
 
